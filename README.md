@@ -24,12 +24,21 @@ Kotlin data classes (both for rows *and* for JSON columns!), primitive types and
 
 This is not yet a complete library (not on Maven Central) so it lacks a build script.
 
-Obviously PRs are welcome :)
-
-But for now this project serves as a way to publish the code.
+This project serves as a way to publish the code.
 It is good for other to see it, to gather some feedback on wether or not this project is useful to a broader audience.
 
-There are some tests (but without a build tool). So here we provide some code examples that illustrate how the code in the project can be used...
+It currently does not implement all of the Jdbi API. The Jdbi API itself is still available when using this code: so no harm done.
+But for now it only implements what was needed in our project:
+
+* Only implements binding arguments by name
+* Only does `bindArray` (called `bindArrayOf`) as `bindList` is problematic with empty lists
+
+Full API coverage is needed when properly releasing this project. But for now this suffices.
+
+Obviously PRs are welcome :)
+
+There are some tests (but without a build tool), but they are not easy to understand the usage patterns from.
+Therefor below we provide some code examples that illustrate how the code in this project can be used...
 
 
 ### Usage examples
