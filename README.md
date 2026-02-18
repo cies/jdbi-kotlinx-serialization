@@ -1,12 +1,16 @@
 jdbi-kotlinx-serialization
 ==========================
 
-A Kotlin library which allows using [Jdbi](https://jdbi.org) with [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
+A Kotlin "library" which extends [Jdbi](https://jdbi.org) to use
+[kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization)
+for deserialization of query results
 instead of reflection-heavy Bean re-hydrator found in Jdbi.
 
-Provides very fast (reflection-free) type-safe database operations with low-boilerplate mapping between `java.sql.ResultSet` objects and
-Kotlin data classes (both for rows *and* for JSON columns!), primitive types and some additional kotlins types
-(like `Uuid`, `kotlin.time` and `kotlinx.datetime` classes).
+Allows for a low-boilerplate and very fast (and reflection-free!) mapping between:
+
+* `java.sql.ResultSet` objects and Kotlin data classes (both for rows *and* for JSON columns!),
+* primitive types, and
+* some additional Kotlin types (like `Uuid`, `kotlin.time` and `kotlinx.datetime` classes).
 
 
 ## Features
@@ -22,15 +26,19 @@ Kotlin data classes (both for rows *and* for JSON columns!), primitive types and
 
 ## Project maturity
 
-This is not yet a complete library (not on Maven Central) so it lacks a build script.
+This is not yet a complete library (not on Maven Central) and it lacks a build script.
 
 This project serves as a way to publish the code.
 It is good for other to see it, to gather some feedback on wether or not this project is useful to a broader audience.
 
-It currently does not implement all of the Jdbi API. The Jdbi API itself is still available when using this code: so no harm done.
-But for now it only implements what was needed in our project:
+If you want to test it, just copy the code into you project for now.
 
-* Only implements binding arguments by name
+It currently does not implement all of the Jdbi API.
+The Jdbi API itself is still available when using this code: so no harm done.
+
+For now it only implements what was needed in our project:
+
+* Only implements binding arguments by name (i.e.: `:name`)
 * Only does `bindArray` (called `bindArrayOf`) as `bindList` is problematic with empty lists
 
 Full API coverage is needed when properly releasing this project. But for now this suffices.
