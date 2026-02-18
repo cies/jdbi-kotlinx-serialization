@@ -39,7 +39,7 @@ The Jdbi API itself is still available when using this code: so no harm done.
 For now it only implements what was needed in our project:
 
 * Only implements binding arguments by name (i.e.: `:name`)
-* Only does `bindArray` (called `bindArrayOf`) as `bindList` is problematic with empty lists
+* Only has a replacement for `bindArray` (called `bindIterable`) as `bindList` is problematic with empty lists
 
 Full API coverage is needed when properly releasing this project. But for now this suffices.
 
